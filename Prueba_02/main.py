@@ -46,15 +46,38 @@ else:
 
 diaTrabajo = input("Escriba el dia que quiere trabajar : (Escriba el dia o del 1 al 5)")
 
-if diaTrabajo.upper() == 'LUNES' or diaTrabajo == "1":
+#TIPO SWITCH 
+if diaTrabajo.upper() == 'LUNES' or diaTrabajo == "1":  #CASO
     print("Escogio el dia lunes")
-elif diaTrabajo.upper() == 'MARTES' or diaTrabajo == "2":
+elif diaTrabajo.upper() == 'MARTES' or diaTrabajo == "2":#CASO
     print("Escogio el dia martes")
-elif diaTrabajo.upper() == 'MIERCOLES' or diaTrabajo == "3":
+elif diaTrabajo.upper() == 'MIERCOLES' or diaTrabajo == "3":#CASO
     print("Escogio el dia miercoles")
-elif diaTrabajo.upper() == 'JUEVES' or diaTrabajo == "4":
+elif diaTrabajo.upper() == 'JUEVES' or diaTrabajo == "4":#CASO
     print("Escogio el dia jueves")
-elif diaTrabajo.upper() == 'VIERNES' or diaTrabajo == "5":
+elif diaTrabajo.upper() == 'VIERNES' or diaTrabajo == "5":#CASO
     print("Escogio el dia viernes")
-else:
+else:      #DEFAULT
     print("Día no válido")
+
+
+# Ejemplo 5
+
+
+moneda=float(input("Escriba la cantidad de soles : "))
+opcion=int(input("\nA que moneda desea convertir:"
+                   "\n1: Dolares S/3.75 "
+                   "\n2: Pesos mexicanos S/0.19"
+                   "\nOpcion : "))
+
+if(opcion == 1):
+    print(f'Saldo ingresado de : {moneda} \nSaldo convertido : {round((moneda/3.75),2)}')
+    # print(f'Saldo ingresado de : {moneda} \nSaldo convertido : {moneda/3.75}')
+elif opcion == 2:#CASO
+    print(f'Saldo ingresado de : {moneda} \nSaldo convertido : {round((moneda/0.19),2)}')
+    # print(f'Saldo ingresado de : {moneda} \nSaldo convertido : {moneda/0.19}')
+else:      
+    print("Opcion inexistente")
+
+
+# USO DEL WHILE
