@@ -96,6 +96,9 @@ while(contador>0):
     contador-=1 #Reducir el valor en 1
 print('¡El cohete ha despegado con existe!')
 
+
+# Ejemplo 7
+
 # USO DE MATCH
 
 def evaluar_dia(diaTrabajo):   #DEF = FUNCIONES 
@@ -117,5 +120,51 @@ dia = input("Escriba el dia que quiere trabajar : (Escriba el dia o del 1 al 5)"
 resultado = evaluar_dia(dia.upper())
 print(resultado)
 # print(evaluar_dia(dia.upper())) # Otra forma
+
+
+# Ejemplo 8
+
+# USO DE MATCH
+
+x=int(input('Ingrese variable X:'))
+y=int(input('Ingrese variable Y:'))
+
+point=(x,y) # tupla - secuencia de elementos inmutables (no se pueden modificar después de su creación)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y={y}")
+    case (x, 0):
+        print(f"X={x}")
+    case (x, y):
+        print(f"X={x}, Y={y}")
+    case _:
+        # raise ValueError("Not a point")
+         print('Error')
+
+# Ejemplo 9
+
+x = int(input('Ingrese variable X:'))
+y = int(input('Ingrese variable Y:'))
+
+point = [x, y]  # Lista (array)
+
+# Se utiliza el comodín _ para ignorar un valor específico en la comparación
+
+match point:
+    case [0, 0]:
+        print("Origin")
+    case [0, _]:
+        print(f"Y={point[1]}")
+    case [_, 0]:
+        print(f"X={point[0]}")
+    case [_, _]:
+        print(f"X={point[0]}, Y={point[1]}")
+    case _:
+        print('Error')
+
+
 
 
