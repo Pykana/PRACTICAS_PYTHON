@@ -29,3 +29,32 @@ else:
     
 
 
+# Ejemplo 3
+
+estatura=float(input("Escriba su estatura : "))
+
+if(estatura>1.60):
+    if(estatura>2.10):
+        print(f'Si pasa \nSu estatura es de {estatura}')
+    else:
+        print("Escriba una estatura real")
+else:
+    print("La estatura requerida es de 1.60 a mas")
+    
+
+# Ejemplo 4
+
+diaTrabajo = input("Escriba el dia que quiere trabajar : (Escriba el dia o del 1 al 5)")
+
+if diaTrabajo.upper() == 'LUNES' or diaTrabajo == "1":
+    print("Escogio el dia lunes")
+elif diaTrabajo.upper() == 'MARTES' or diaTrabajo == "2":
+    print("Escogio el dia martes")
+elif diaTrabajo.upper() == 'MIERCOLES' or diaTrabajo == "3":
+    print("Escogio el dia miercoles")
+elif diaTrabajo.upper() == 'JUEVES' or diaTrabajo == "4":
+    print("Escogio el dia jueves")
+elif diaTrabajo.upper() == 'VIERNES' or diaTrabajo == "5":
+    print("Escogio el dia viernes")
+else:
+    print("Día no válido")
