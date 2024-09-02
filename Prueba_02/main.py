@@ -15,5 +15,17 @@ else:
 nombre=input("Escriba su nombre : ")
 edad=int(input("Escriba su edad : "))
 
+if(edad<18):
+    print("Usted no cumple con la edad minima requeridad")
+else:
+    dni=input("Cuenta con DNI? (S/N) :")
+    if(dni.upper()=='S'):
+        print("Cuenta con los requisitos para votar")
+        #print("Nombre : ", nombre,"\nEdad : ",edad)
+        print(f'Nombre : {nombre} \nEdad : {edad}') #OTRA FORMA
+    else:
+        print("No cuenta con los requisitos para votar")
+        print("DNI Necesario")
+    
 
 
