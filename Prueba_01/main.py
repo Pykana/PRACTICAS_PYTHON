@@ -71,3 +71,19 @@ dato2=float(input("ingrese el dato 2 : "))  # A DECIMALES
 
 
 print("La suma es : " , dato1+dato2)
+
+# PROMEDIO Y CONDICIONALES
+
+print("Ingrese las calificaciones de la siguientes materias para calcular el promedio")
+
+materia1=float(input("Fisica : "))  # A DECIMALES
+materia2=float(input("Geografia "))  # A DECIMALES
+materia3=float(input("Algebra "))  # A DECIMALES
+
+print("Promedio es : " , (materia1+materia2+materia3)/3 )
+print("Promedio redondeado es : " , round((materia1+materia2+materia3)/3))
+
+if((materia1+materia2+materia3)/3 >=12):
+    print("Usted ha aprobado")
+else:
+    print("Usted ha desaprobado")
