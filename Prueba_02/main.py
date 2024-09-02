@@ -81,3 +81,41 @@ else:
 
 
 # USO DEL WHILE
+
+# Ejemplo 6
+
+import time #Sirve para manjear el tiempo en un programa
+
+contador=10
+
+print('Iniciando cuenta regresiva...')
+
+while(contador>0):
+    print(contador)
+    time.sleep(1)
+    contador-=1 #Reducir el valor en 1
+print('¡El cohete ha despegado con existe!')
+
+# USO DE MATCH
+
+def evaluar_dia(diaTrabajo):   #DEF = FUNCIONES 
+    match diaTrabajo:           # funcion similar al switch
+        case "1" | "LUNES":     # caso
+            return "Escogió el día lunes"
+        case "2" | "MARTES":# caso
+            return "Escogió el día martes"
+        case "3" | "MIÉRCOLES":# caso
+            return "Escogió el día miércoles"
+        case "4" | "JUEVES":# caso
+            return "Escogió el día jueves"
+        case "5" | "VIERNES":# caso
+            return "Escogió el día viernes"
+        case _:# default
+            return "Día no válido"
+
+dia = input("Escriba el dia que quiere trabajar : (Escriba el dia o del 1 al 5)")
+resultado = evaluar_dia(dia.upper())
+print(resultado)
+# print(evaluar_dia(dia.upper())) # Otra forma
+
+
