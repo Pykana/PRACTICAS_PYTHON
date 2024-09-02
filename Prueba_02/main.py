@@ -151,7 +151,7 @@ y = int(input('Ingrese variable Y:'))
 
 point = [x, y]  # Lista (array)
 
-# Se utiliza el comodín _ para ignorar un valor específico en la comparación
+# Se utiliza el comodín _ para ignorar un valor específico en la comparación osea el elemento puede ser cualquier valor
 
 match point:
     case [0, 0]:
