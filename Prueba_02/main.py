@@ -1,3 +1,12 @@
+#################################################
+# PARA CORRER UNA PARTE DEL CODIGO BORRAR LOS  #
+# PARA COMENTAR UNA PARTE DEL CODIGO COLOCAR   #
+#################################################
+
+#############################
+#   CUIDADO CON LOS ESPACIOS
+############################
+
 # USO DEL IF - DESCUENTO 
 
 # Ejemplo 1 
@@ -166,5 +175,32 @@ match point:
         print('Error')
 
 
+# Ejemplo 10
+
+import time
+
+for i in [1,2,3,4,5,6,7,8,9]:
+    print(f'Segundo {i}')
+    time.sleep(1)
+print(f'Operacion Finalizada')
 
 
+# Ejemplo 11
+
+contador=0
+suma=0
+numero=0
+
+while True: #Mientras sea verdad
+    numero=float(input('Escribe un numero para sumarlo (Ingresa 0 para salir): '))
+    if(numero==0):
+        break
+    suma+=numero
+    contador+=1
+if(contador>0):
+    promedio=suma/contador
+    print(f'La suma es {suma}')
+    print(f'Cantidad de intentos {contador}')
+    print(f'primedio es de {promedio}')
+else:
+    print(f'No se ingresarion numeros validos')
