@@ -40,6 +40,7 @@ linea = pygame.draw.line(pantalla,verde, (200, 150), (250, 150), 5) # crear line
 # 10: Este es el grosor de la línea en píxeles.
 
 circulo = pygame.draw.circle(pantalla, azul, (300, 150), 75, 5)  # crear circulo para usar en pantalla
+circulo2 = pygame.draw.circle(pantalla, azul, (500, 150), 75, 5)  # crear circulo para usar en pantalla
 
 # pygame.draw.line(superficie, color, punto_inicial, punto_final, grosor)
 # superficie: Dónde dibujar la línea (por ejemplo, la ventana principal).
@@ -51,6 +52,9 @@ circulo = pygame.draw.circle(pantalla, azul, (300, 150), 75, 5)  # crear circulo
 print(reactangulo1) # dibujar rectangulo en pantalla
 print(linea) # dibujar linea en pantalla
 print(circulo) # dibujar linea en pantalla
+print(circulo2) # dibujar linea en pantalla
+
+
 
 while True:  #buble de juego
     for event in pygame.event.get():
