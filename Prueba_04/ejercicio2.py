@@ -5,7 +5,7 @@ ventana = pygame.display.set_mode((640,480))  # tamaño de ventana
 
 pygame.display.set_caption("ejercicio 2")  # titulo del juego
 
-ball = pygame.image.load("Prueba_04/ball.png") # Crea el objeto pelota  # ball = pygame.image.load("ball.png") -- bola usando la imagen png
+ball = pygame.image.load("Prueba_04/Assets/ball.png") # Crea el objeto pelota  # ball = pygame.image.load("ball.png") -- bola usando la imagen png
 
 ballrect = ball.get_rect() # Obtengo el rectángulo del objeto anterior --- para la bola creada
 
