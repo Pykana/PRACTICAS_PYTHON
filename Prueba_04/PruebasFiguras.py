@@ -4,8 +4,9 @@ from pygame.locals import *
 pygame.init() #inicializar pygame 
 
 pantalla = pygame.display.set_mode((800,600)) #tamaño ventana
-titulo = 'Titulo Juego' #declarar titulo
-icono = pygame.image.load("Assets/ball.png") #declarar icono
+titulo = 'Test Game' #declarar titulo
+icono = pygame.image.load("Sprites/Icon/GameIcon.png") #declarar icono
+fondo = pygame.image.load("Assets/Background/City1/Bright/City1(800x600).png")
 
 pygame.display.set_caption(titulo) # setear Titulo 
 pygame.display.set_icon(icono)  # setear Icono
@@ -21,8 +22,8 @@ verde = (0,255,0)
 H0x00E61290 = (144,18,230)
 H0x001E6EDD = (144,18,230)
 
-
 pantalla.fill(blanco) # cambiar color de fondo de pantalla  -- por defecto en negro
+# pantalla.blit(fondo,(0,0))
 
 #figuras
 
@@ -74,7 +75,6 @@ print(circulo) # dibujar circulo en pantalla
 print(circulo2) # dibujar circulo2 en pantalla
 print(ellipse) # dibujar elipce en pantalla
 print(poligono) # dibujar elipce en pantalla
-
 
 while True:  #buble de juego
     for event in pygame.event.get():
