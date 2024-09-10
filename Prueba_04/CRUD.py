@@ -1,3 +1,4 @@
+from time import sleep
 
 #Ejemplo 3
 # base_dev_python  --- Nombre base de datos
@@ -15,10 +16,11 @@ mydb = mysql.connector.connect(
     database="base_dev_python"
 )
 
-insertarTablaUsuario='INSERT INTO usuario (Correo, Contrasena) values (%s,%s)'  # CONSULTA INSERTAR
-selectTablaUsuario = 'SELECT * FROM usuario' # CONSULTA SELECT * FROM
+traerUsuarios='Select * from usuario'
+insertarUsuario='INSERT INTO USUARIO (Correo, Contrasena) values (%s,%s)'  # CONSULTA INSERTAR
+buscarUsuario = 'SELECT * FROM USUARIO WHERE id_Usuario = %s' # CONSULTA SELECT * FROM
 eliminarUsuario = 'DELETE FROM USUARIO WHERE id_Usuario = %s' # CONSULTA DELETE
-editarUsuario = 'UPDATE USUARIO WHERE id_Usuario = %s' # CONSULTA UPDATE
+editarUsuario = 'UPDATE USUARIO SET Correo = %s , Contrasena = %s WHERE id_Usuario = %s' # CONSULTA UPDATE
 
 # Recorrido de tabla
 mycursor = mydb.cursor()
@@ -57,24 +59,73 @@ def MostrarOpciones():
 
                 values=(correo,contrasena) # Valores a enviar a la consulta sql
 
-                mycursor.execute(insertarTablaUsuario,values) # Iniciarlizar la consulta a realizar
+                mycursor.execute(insertarUsuario,values) # Iniciarlizar la consulta a realizar
                 mydb.commit()  # realizar cambios a base de datos
 
-                print("Se registro el numero usuario : " , mycursor.rowcount)
+                print("Usuario Creado")
                 time.sleep(3)  # Pausa por 3 segundos
             case 2:
                 limpiarPantalla()
                 print("Editar Usuario")
-                # Aquí iría el código para editar un usuario
+                idUsuario = input('Ingrese el Id del usuario a editar :')
+                usuario=input('Ingrese el nuevo campo para correo')
+                contrasena=input('Ingrese el nuevo campo para la contraseña')
+                try:
+                    values = (usuario, contrasena, idUsuario)
+                    mycursor.execute(editarUsuario, values)
+                    mydb.commit()
+                    print("Se edito correctamente el usuario")
+                    sleep(3)
+                except:
+                    limpiarPantalla()
+                    print("No se encontro el usuario ")
+                    sleep(3)
             case 3:
                 limpiarPantalla()
                 print("Borrar Usuario")
+                try:
+                    idUsuario = input('Ingrese el Id del usuario a eliminar :')
+                    values = (idUsuario,)
+
+                    mycursor.execute(eliminarUsuario, values)
+                    mydb.commit()
+
+                    print(f'Usuario Eliminado')
+                    time.sleep(3)
+                except:
+                    limpiarPantalla()
+                    print("No se encontro el usuario ")
+                    sleep(3)
             case 4:
                 limpiarPantalla()
                 print("Buscar Usuario")
+
+                try:
+                    idUsuario = input('Ingrese el Id del usuario a buscar :')
+                    values = (idUsuario,)
+                    mycursor.execute(buscarUsuario, values)
+                    respuesta = mycursor.fetchone()
+                    if (respuesta):
+                        print(f"Resultado : {respuesta}")
+                    else:
+                        print("No se encontro resultados")
+                    sleep(3)
+                except:
+                    limpiarPantalla()
+                    print("Error en consulta buscar ")
+                    sleep(3)
+
             case 5:
                 limpiarPantalla()
                 print("Mostrar Usuario")
+                mycursor.execute(traerUsuarios)
+                respuesta = mycursor.fetchall()
+                if respuesta:  # Si hay resultados
+                    for fila in respuesta:  # Recorre cada fila de la lista
+                        print(f"Usuario: {fila}")
+                else:
+                    print("No se encontraron resultados")
+                sleep(3)
             case 6:
                 limpiarPantalla()
                 ProgramaActivo = False
