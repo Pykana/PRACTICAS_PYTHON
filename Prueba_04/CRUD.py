@@ -1,5 +1,3 @@
-from time import sleep
-
 #Ejemplo 3
 # base_dev_python  --- Nombre base de datos
 # cd "C:\Program Files\MariaDB 10.5\bin"  -- navegar hasta la carpeta de mysql
@@ -8,6 +6,8 @@ from time import sleep
 import mysql.connector  # conexion a sql
 import os  # maneja instrucciones del sistema
 import time  # manejar tiempo ejecucion de un programa
+
+
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -75,11 +75,11 @@ def MostrarOpciones():
                     mycursor.execute(editarUsuario, values)
                     mydb.commit()
                     print("Se edito correctamente el usuario")
-                    sleep(3)
+                    time.sleep(3)
                 except:
                     limpiarPantalla()
                     print("No se encontro el usuario ")
-                    sleep(3)
+                    time.sleep(3)
             case 3:
                 limpiarPantalla()
                 print("Borrar Usuario")
@@ -95,7 +95,7 @@ def MostrarOpciones():
                 except:
                     limpiarPantalla()
                     print("No se encontro el usuario ")
-                    sleep(3)
+                    time.sleep(3)
             case 4:
                 limpiarPantalla()
                 print("Buscar Usuario")
@@ -109,11 +109,11 @@ def MostrarOpciones():
                         print(f"Resultado : {respuesta}")
                     else:
                         print("No se encontro resultados")
-                    sleep(3)
+                    time.sleep(3)
                 except:
                     limpiarPantalla()
                     print("Error en consulta buscar ")
-                    sleep(3)
+                    time.sleep(3)
 
             case 5:
                 limpiarPantalla()
@@ -125,7 +125,7 @@ def MostrarOpciones():
                         print(f"Usuario: {fila}")
                 else:
                     print("No se encontraron resultados")
-                sleep(3)
+                time.sleep(3)
             case 6:
                 limpiarPantalla()
                 ProgramaActivo = False
