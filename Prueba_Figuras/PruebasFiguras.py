@@ -5,11 +5,11 @@ pygame.init() #inicializar pygame
 
 pantalla = pygame.display.set_mode((800,600)) #tamaño ventana
 titulo = 'Test Game' #declarar titulo
-icono = pygame.image.load("Sprites/Icon/GameIcon.png") #declarar icono
-fondo = pygame.image.load("Assets/Background/City1/Bright/City1(800x600).png")
+# icono = pygame.image.load("../Prueba_Juego/Sprites/Icon/GameIcon.png") #declarar icono
+# fondo = pygame.image.load("../Prueba_Juego/Assets/Background/City1/Bright/City1(800x600).png")
 
 pygame.display.set_caption(titulo) # setear Titulo 
-pygame.display.set_icon(icono)  # setear Icono
+# pygame.display.set_icon(icono)  # setear Icono
 
 #colores
 
