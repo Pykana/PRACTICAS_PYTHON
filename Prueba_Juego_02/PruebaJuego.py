@@ -10,11 +10,8 @@ fondo = pygame.image.load("Assets/Background/City1/Bright/City1(800x600).png").c
 FPS= 60
 reloj= pygame.time.Clock()
 
-
-
 pygame.display.set_caption(titulo) # setear Titulo
 pygame.display.set_icon(icono)  # setear Icono
-
 
 SoldadoQuieto= [pygame.image.load("Sprites/Soldier/EnEspera/idle1.png"),
                pygame.image.load("Sprites/Soldier/EnEspera/idle2.png"),
@@ -62,7 +59,6 @@ MoverDerecha = False
 #Pasos
 CuentaPasos =0
 
-
 def RecargarPantalla():
     # Variables Globales
 
@@ -91,7 +87,6 @@ def RecargarPantalla():
         CuentaPasos += 1
     else: # Quieto
         pantalla.blit(SoldadoQuieto[0], (int(XPersonaje), int(YPersonaje)))  # Usar la primera imagen de la lista cuando el personaje está quieto
-
 
 JuegoActivo = True
 

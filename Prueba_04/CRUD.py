@@ -7,8 +7,6 @@ import mysql.connector  # conexion a sql
 import os  # maneja instrucciones del sistema
 import time  # manejar tiempo ejecucion de un programa
 
-
-
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
